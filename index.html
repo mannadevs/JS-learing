@@ -10,6 +10,7 @@
         }
         h1 {
             color: #fff;
+            text-align: center;
         }
     </style>
 </head>
@@ -19,21 +20,20 @@
     <h1 id="printData2"></h1>
     <script>
 
-    function checkLen(sentence, checkCountry, firstItemStart) {
+    // function checkLen(sentence, checkCountry, firstItemStart) {
 
-        const regex = new RegExp(checkCountry, 'ig');
+    //     const regex = new RegExp(checkCountry, 'ig');
 
-        const matches = sentence.match(regex);
-        const occurrences = matches ? matches.length : "no match";
-        // console.log(occurrences);
-        const regex2 = new RegExp(firstItemStart, 'g');
-        const searchs = sentence.search(regex2);
-        const occurrences2 = searchs >= 0 ? searchs : "not found";
-        document.getElementById("printData").innerHTML = occurrences + ", " + occurrences2;
-    }
+    //     const matches = sentence.match(regex);
+    //     const occurrences = matches ? matches.length : "no match";
+    //     // console.log(occurrences);
+    //     const regex2 = new RegExp(firstItemStart, 'g');
+    //     const searchs = sentence.search(regex2);
+    //     const occurrences2 = searchs >= 0 ? searchs : "not found";
+    //     document.getElementById("printData").innerHTML = occurrences + ", " + occurrences2;
+    // }
 
-    checkLen("Bangladesh, to the east of India on the Bay of Bengal, is a South Asian country marked by lush greenery and many waterways. Its Padma (Ganges), Meghna and Jamuna rivers create fertile plains, and travel by boat is common. On the southern coast, the Sundarbans, an enormous mangrove forest shared with Eastern India, is home to the royal Bengal tiger.", "india", "rivers");
-
+    // checkLen("Bangladesh, to the east of India on the Bay of Bengal, is a South Asian country marked by lush greenery and many waterways. Its Padma (Ganges), Meghna and Jamuna rivers create fertile plains, and travel by boat is common. On the southern coast, the Sundarbans, an enormous mangrove forest shared with Eastern India, is home to the royal Bengal tiger.", "india", "rivers");
 
     // function letterCheckFun(array, letter) {
     //     let arrayLen = array.length;
@@ -76,19 +76,60 @@
 
     //     console.log(randomFun(1, 3))
 
+    // person.fullName = function () {
+    //     return this.fName + " " + this.lName.toUpperCase();
+    // }
+    // person.age = 30;
+    // console.log(person.fullName())
+    // document.getElementById("printData2").innerHTML = person.fullName() + " is " + person.age + " years old."
+    // let printData = document.getElementById("printData2");
+    // printData.style.color = "green";
+    // printData.style.marginTop = "50px";
+
+    // let text = '';
+    // for (x in person) {
+    //     text += x;
+        
+    // }
+
+    // console.log(text)
+
+//    const personArray =  Object.values(person);
+    // console.log(person.today);
+
+    // document.getElementById("printData").innerHTML =     new Date()
+
+//    for (x of personArray) {
+//     console.log(x)
+//    }
 
     const person = {
-        fName: "John",
-        lName: "Doe",
-        id: 5566,
-    };
-
-    person.fullName = function () {
-        return this.fName + " " + this.lName.toUpperCase();
+        firstName: "Manna",
+        lastName: "Ahmed",
+        age: 35,
+        fullName: function () {
+            return this.firstName + " " + this.lastName;
+        }
     }
 
-    console.log(person.fullName())
+    function Persons (first, last, age, eye) {
+        this.firstName = first;
+        this.lastName = last;
+        this.fullName = first + " " + last;
+        this.myFun = function () {
+            return this.fullName + "" + ", my age is " + this.age;
+        }
+        this.age = age;
+        this.eyeColor = eye;
+    };
 
+    const sumit = new Persons ("Sumit", "Saha", 35, "black");
+    const sabbir = new Persons ("Sabbir", "Ahmed", 33, "blue");
+    console.log(sabbir.myFun());
+    // console.dir(Persons ["Sumit", "Saha", 30, "black"]);
+
+    
+    // console.log(person.fullName());
     </script>
 </body>
 </html>
